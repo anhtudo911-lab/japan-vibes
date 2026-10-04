@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japan Night Gallery</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Skip link for accessibility -->
+    <a class="skip-link" href="#main-content">Skip to Main Content</a>
+
+    <header>
+        <div class="header-content">
+            <p class="eyebrow">TRAVEL • JAPAN • PHOTOGRAPHY</p>
+            <h1>Japan After Dark</h1>
+            <p class="subtitle">
+                A small collection of places, lights, and quiet moments from Japan.
+            </p>
+        </div>
+    </header>
+
+    <nav aria-label="Main navigation">
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+    </nav>
+
+    <main id="main-content">
+
+        <section class="hero">
+            <p class="section-label">INTERACTIVE PHOTO GALLERY</p>
+
+            <div id="image" class="preview">
+                <div class="preview-content">
+                    <span class="preview-icon">✦</span>
+                    <h2>Hover over an image</h2>
+                    <p>Move your mouse over a photograph below to explore Japan.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="gallery-section">
+
+            <div class="section-heading">
+                <div>
+                    <p class="section-label">EXPLORE</p>
+                    <h2>Five moments in Japan</h2>
+                </div>
+
+                <p class="gallery-description">
+                    Hover over each photograph to change the main display.
+                </p>
+            </div>
+
+            <div class="gallery">
+
+                <figure class="gallery-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1000&q=85"
+                        alt="Tokyo city lights at night"
+                        onmouseover="upDate(this)"
+                        onmouseout="undo(this)"
+                    >
+                    <figcaption>
+                        <span>01</span>
+                        Tokyo Nights
+                    </figcaption>
+                </figure>
+
+                <figure class="gallery-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1000&q=85"
+                        alt="Traditional Kyoto street with warm lantern lights"
+                        onmouseover="upDate(this)"
+                        onmouseout="undo(this)"
+                    >
+                    <figcaption>
+                        <span>02</span>
+                        Kyoto Lanterns
+                    </figcaption>
+                </figure>
+
+                <figure class="gallery-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?auto=format&fit=crop&w=1000&q=85"
+                        alt="Mount Fuji surrounded by a peaceful Japanese landscape"
+                        onmouseover="upDate(this)"
+                        onmouseout="undo(this)"
+                    >
+                    <figcaption>
+                        <span>03</span>
+                        Mount Fuji
+                    </figcaption>
+                </figure>
+
+                <figure class="gallery-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?auto=format&fit=crop&w=1000&q=85"
+                        alt="Quiet Japanese street surrounded by traditional buildings"
+                        onmouseover="upDate(this)"
+                        onmouseout="undo(this)"
+                    >
+                    <figcaption>
+                        <span>04</span>
+                        Quiet Streets
+                    </figcaption>
+                </figure>
+
+                <figure class="gallery-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1558862107-d49ef2a04d72?auto=format&fit=crop&w=1000&q=85"
+                        alt="Japanese train moving through a city at night"
+                        onmouseover="upDate(this)"
+                        onmouseout="undo(this)"
+                    >
+                    <figcaption>
+                        <span>05</span>
+                        Last Train
+                    </figcaption>
+                </figure>
+
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div>
+                <p class="section-label">ABOUT THE GALLERY</p>
+                <h2>Small moments,<br>big memories.</h2>
+            </div>
+
+            <p>
+                Japan has a special rhythm after sunset. Neon streets become
+                reflections, old neighborhoods become quiet, and the last train
+                carries another story home. This gallery captures a few of
+                those moments.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Japan After Dark</p>
+        <p>Interactive Photo Gallery • JavaScript DOM Project</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

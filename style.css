@@ -1,0 +1,404 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0a0d12;
+    color: #f4f4f4;
+    line-height: 1.6;
+}
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+
+.skip-link {
+    position: absolute;
+    top: -60px;
+    left: 20px;
+    background: #ffffff;
+    color: #000000;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    z-index: 1000;
+    border-radius: 0 0 8px 8px;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    min-height: 430px;
+    display: flex;
+    align-items: flex-end;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(5, 8, 14, 0.15),
+            rgba(5, 8, 14, 0.95)
+        ),
+        url("https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1800&q=90");
+
+    background-size: cover;
+    background-position: center;
+
+    border-bottom: 1px solid #252a33;
+}
+
+.header-content {
+    width: min(1200px, 90%);
+    margin: 0 auto;
+    padding: 70px 0 60px;
+}
+
+.eyebrow,
+.section-label {
+    color: #aab3c2;
+    font-size: 12px;
+    letter-spacing: 4px;
+    font-weight: bold;
+}
+
+header h1 {
+    font-size: clamp(48px, 8vw, 100px);
+    line-height: 0.95;
+    letter-spacing: -4px;
+    margin: 18px 0;
+}
+
+.subtitle {
+    max-width: 600px;
+    color: #c6ccd5;
+    font-size: 18px;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+
+    padding: 18px;
+
+    background: rgba(10, 13, 18, 0.88);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid #252a33;
+}
+
+nav a {
+    color: #dfe4eb;
+    text-decoration: none;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a:focus {
+    color: #ffffff;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+    width: min(1200px, 90%);
+    margin: auto;
+}
+
+.hero {
+    padding: 90px 0 70px;
+}
+
+.preview {
+    margin-top: 25px;
+
+    height: 560px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(10, 13, 18, 0.92),
+            rgba(10, 13, 18, 0.92)
+        );
+
+    background-size: cover;
+    background-position: center;
+
+    border: 1px solid #303641;
+
+    position: relative;
+    overflow: hidden;
+
+    transition:
+        background-image 0.4s ease,
+        transform 0.4s ease;
+}
+
+.preview::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.15),
+        rgba(0, 0, 0, 0.55)
+    );
+
+    pointer-events: none;
+}
+
+.preview-content {
+    position: relative;
+    z-index: 2;
+    padding: 30px;
+}
+
+.preview-icon {
+    display: block;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.preview h2 {
+    font-size: clamp(28px, 4vw, 48px);
+    margin-bottom: 10px;
+}
+
+.preview p {
+    color: #c3c9d2;
+}
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery-section {
+    padding: 60px 0 100px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 40px;
+    margin-bottom: 35px;
+}
+
+.section-heading h2 {
+    font-size: 42px;
+    margin-top: 10px;
+}
+
+.gallery-description {
+    max-width: 350px;
+    color: #9ca5b2;
+    font-size: 15px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 18px;
+}
+
+.gallery-card {
+    grid-column: span 4;
+
+    background: #11151c;
+    border: 1px solid #272d36;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.gallery-card:nth-child(4),
+.gallery-card:nth-child(5) {
+    grid-column: span 6;
+}
+
+.gallery-card:hover {
+    transform: translateY(-8px);
+    border-color: #707986;
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 280px;
+
+    display: block;
+
+    object-fit: cover;
+
+    filter: saturate(0.85);
+
+    transition:
+        transform 0.5s ease,
+        filter 0.5s ease;
+}
+
+.gallery-card:hover img {
+    transform: scale(1.05);
+    filter: saturate(1.1);
+}
+
+figcaption {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 18px 20px;
+
+    font-size: 17px;
+    font-weight: bold;
+}
+
+figcaption span {
+    color: #727b89;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+
+    padding: 90px 0;
+
+    border-top: 1px solid #252a33;
+}
+
+.about h2 {
+    font-size: 46px;
+    line-height: 1.05;
+    margin-top: 15px;
+}
+
+.about > p {
+    color: #aeb6c2;
+    font-size: 18px;
+    align-self: center;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+
+    width: min(1200px, 90%);
+    margin: auto;
+
+    padding: 30px 0;
+
+    color: #707986;
+    font-size: 12px;
+
+    border-top: 1px solid #252a33;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+
+    header {
+        min-height: 360px;
+    }
+
+    .preview {
+        height: 400px;
+    }
+
+    .section-heading {
+        display: block;
+    }
+
+    .gallery-description {
+        margin-top: 15px;
+    }
+
+    .gallery-card,
+    .gallery-card:nth-child(4),
+    .gallery-card:nth-child(5) {
+        grid-column: span 6;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    footer {
+        display: block;
+    }
+
+    footer p + p {
+        margin-top: 8px;
+    }
+}
+
+@media (max-width: 550px) {
+
+    nav {
+        gap: 20px;
+    }
+
+    header h1 {
+        letter-spacing: -2px;
+    }
+
+    .gallery {
+        display: block;
+    }
+
+    .gallery-card {
+        margin-bottom: 18px;
+    }
+
+    .preview {
+        height: 350px;
+    }
+}
